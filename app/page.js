@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Home() {
   const editions = [
     "English",
@@ -137,17 +139,13 @@ export default function Home() {
               <div className="w-full max-w-md rounded-[2rem] border border-stone-800 bg-gradient-to-b from-stone-900 to-black p-6 shadow-2xl shadow-black/40">
                 <div className="aspect-[3/4] rounded-[1.5rem] border border-stone-800 bg-[linear-gradient(180deg,#201915_0%,#120f0d_100%)] p-8">
                   <div className="flex h-full flex-col justify-between rounded-[1.2rem] border border-amber-400/30 p-8">
-                    <div>
-                      <div className="text-xs uppercase tracking-[0.35em] text-stone-400">Gotan Press</div>
-                      <div className="mt-6 text-4xl font-semibold leading-tight">A Contained Fire</div>
-                      <div className="mt-4 text-sm uppercase tracking-[0.2em] text-stone-400">
-                        Social Argentine Tango as Interior Discipline
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-stone-800 bg-black/30 p-4 text-sm text-stone-300">
-                      A visual stand-in for the book cover.
-                      <div className="mt-2 text-stone-500">Replace with final artwork.</div>
-                    </div>
+                    <Image 
+                      src="/contained-fire-cover.jpg" 
+                      alt="A Contained Fire – Gotan Press" 
+                      width={560} 
+                      height={840} 
+                      className="rounded-xl shadow-2xl"
+                    />
                   </div>
                 </div>
               </div>
