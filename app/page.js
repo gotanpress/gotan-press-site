@@ -90,8 +90,11 @@ export default function Home() {
                 Gotan Press Publication
               </div>
               <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight md:text-6xl">
-                A Contained Fire
+                 A Contained Fire
               </h1>
+              <h2 className="mt-4 max-w-3xl text-2xl text-stone-300 tracking-wide">
+                 Argentine Tango Social Dancing as Interior Alchemy
+              </h2>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
                 Social Argentine tango is often described as passion or connection. 
                 Less often is it recognized as a discipline of containment.
