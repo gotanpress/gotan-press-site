@@ -88,12 +88,20 @@ export default function Home() {
                 Gotan Press Publication
               </div>
               <h1 className="max-w-3xl text-5xl font-semibold leading-tight tracking-tight md:text-6xl">
-                A quiet, long-form book page for a serious tango title.
+                A Contained Fire
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
-                This concept takes inspiration from modern direct-response book sites,
-                but translates that structure into a more restrained, elegant, and
-                editorial language appropriate for Argentine tango.
+                Social Argentine tango is often described as passion or connection. 
+                Less often is it recognized as a discipline of containment.
+              </p>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-stone-300">
+                In the dim light of the milonga, within a strict social form and a repeated embrace,
+                something is held: desire without discharge, attention without distraction,
+                intensity without collapse.
+              </p>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-stone-300">
+                <em>A Contained Fire</em> gives language to an experience many dancers recognize
+                but rarely see described.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a
