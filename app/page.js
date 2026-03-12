@@ -2,13 +2,167 @@ import Image from "next/image";
 
 export default function Home() {
   const editions = [
-    "English",
-    "Español",
-    "Deutsch",
-    "Français",
-    "Italiano",
-    "Dansk",
-  ];
+  {
+    id: "en",
+    label: "English",
+    heading: "English Edition",
+    note: "Available in hardcover, PDF and MP3.",
+    products: [
+      {
+        title: "Hardcover",
+        price: "€32",
+        note: "Manual fulfilment",
+        url: "https://buy.stripe.com/REPLACE_EN_HARDCOVER",
+      },
+      {
+        title: "Digital PDF",
+        price: "€18",
+        note: "Instant delivery",
+        url: "https://buy.stripe.com/REPLACE_EN_PDF",
+        buttonLabel: "Download PDF",
+      },
+      {
+        title: "Digital MP3",
+        price: "€18",
+        note: "Instant delivery",
+        url: "https://buy.stripe.com/REPLACE_EN_MP3",
+        buttonLabel: "Download PDF",
+      },
+    ],
+  },
+  {
+    id: "es",
+    label: "Español",
+    heading: "Edición en Español",
+    note: "Disponible en tapa dura PDF y MP3.",
+    products: [
+      {
+        title: "Tapa dura",
+        price: "€32",
+        note: "Envío manual",
+        url: "https://buy.stripe.com/REPLACE_ES_HARDCOVER",
+      },
+      {
+        title: "Archivo PDF digital",
+        price: "€18",
+        note: "Entrega inmediata",
+        url: "https://buy.stripe.com/REPLACE_ES_PDF",
+        buttonLabel: "Descargargar PDF",
+      },
+      {
+        title: "Archivo MP3 Digital",
+        price: "€18",
+        note: "Entrega inmediata",
+        url: "https://buy.stripe.com/REPLACE_ES_MP3",
+        buttonLabel: "Descargargar PDF",
+      },
+    ],
+  },
+  {
+    id: "de",
+    label: "Deutsch",
+    heading: "Deutsche Ausgabe",
+    note: "Erhältlich als Hardcover, PDF und MP3.",
+    products: [
+      {
+        title: "Hardcover",
+        price: "€32",
+        note: "Manueller Versand",
+        url: "https://buy.stripe.com/REPLACE_DE_HARDCOVER",
+      },
+      {
+        title: "Digitales PDF",
+        price: "€18",
+        note: "Sofortige Lieferung",
+        url: "https://buy.stripe.com/REPLACE_DE_PDF",
+      },
+      {
+        title: "Digitales MP3",
+        price: "€18",
+        note: "Sofortige Lieferung",
+        url: "https://buy.stripe.com/REPLACE_DE_MP3",
+      },
+    ],
+  },
+  {
+    id: "fr",
+    label: "Français",
+    heading: "Édition française",
+    note: "Disponible en relié, PDF et MP3.",
+    products: [
+      {
+        title: "Relié",
+        price: "€32",
+        note: "Expédition manuelle",
+        url: "https://buy.stripe.com/REPLACE_FR_HARDCOVER",
+      },
+      {
+        title: "PDF numérique",
+        price: "€18",
+        note: "Livraison immédiate",
+        url: "https://buy.stripe.com/REPLACE_FR_PDF",
+      },
+      {
+        title: "MP3 numérique",
+        price: "€18",
+        note: "Livraison immédiate",
+        url: "https://buy.stripe.com/REPLACE_FR_MP3",
+      },
+    ],
+  },
+  {
+    id: "it",
+    label: "Italiano",
+    heading: "Edizione italiana",
+    note: "Disponibile in copertina rigida, PDF e MP3.",
+    products: [
+      {
+        title: "Copertina rigida",
+        price: "€32",
+        note: "Spedizione manuale",
+        url: "https://buy.stripe.com/REPLACE_IT_HARDCOVER",
+      },
+      {
+        title: "PDF digitale",
+        price: "€18",
+        note: "Consegna immediata",
+        url: "https://buy.stripe.com/REPLACE_IT_PDF",
+      },
+      {
+        title: "MP3 digitale",
+        price: "€18",
+        note: "Consegna immediata",
+        url: "https://buy.stripe.com/REPLACE_IT_MP3",
+      },
+    ],
+  },
+  {
+    id: "da",
+    label: "Dansk",
+    heading: "Dansk udgave",
+    note: "Fås som hardcover, PDF og MP3.",
+    products: [
+      {
+        title: "Hardcover",
+        price: "€32",
+        note: "Manuel forsendelse",
+        url: "https://buy.stripe.com/REPLACE_DA_HARDCOVER",
+      },
+      {
+        title: "Digital PDF",
+        price: "€18",
+        note: "Øjeblikkelig levering",
+        url: "https://buy.stripe.com/REPLACE_DA_PDF",
+      },
+      {
+        title: "Digital MP3",
+        price: "€18",
+        note: "Øjeblikkelig levering",
+        url: "https://buy.stripe.com/REPLACE_DA_MP3",
+      },
+    ],
+  },
+];
 
   const sections = [
     {
@@ -125,7 +279,7 @@ export default function Home() {
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-2xl border border-stone-800 bg-stone-900/70 p-4">
                   <div className="text-xs uppercase tracking-[0.2em] text-stone-500">Formats</div>
-                  <div className="mt-2 text-base">Paperback · Hardcover · PDF</div>
+                  <div className="mt-2 text-base">Hardcover · PDF · MP3</div>
                 </div>
                 <div className="rounded-2xl border border-stone-800 bg-stone-900/70 p-4">
                   <div className="text-xs uppercase tracking-[0.2em] text-stone-500">Audience</div>
@@ -139,18 +293,15 @@ export default function Home() {
             </div>
 
             <div className="flex items-center justify-center">
-              <div className="w-full max-w-md rounded-[2rem] border border-stone-800 bg-gradient-to-b from-stone-900 to-black p-6 shadow-2xl shadow-black/40">
-                <div className="aspect-[3/4] rounded-[1.5rem] border border-stone-800 bg-[linear-gradient(180deg,#201915_0%,#120f0d_100%)] p-8">
-                  <div className="flex h-full flex-col justify-between rounded-[1.2rem] border border-amber-400/30 p-8">
-                    <Image 
-                      src="/contained-fire-cover.jpg" 
-                      alt="A Contained Fire – Gotan Press" 
-                      width={560} 
-                      height={840} 
-                      className="rounded-xl shadow-2xl"
-                    />
-                  </div>
-                </div>
+              <div className="relative">
+                <Image
+                  src="/contained-fire-cover.jpg"
+                  alt="A Contained Fire – Gotan Press"
+                  width={520}
+                  height={780}
+                  priority
+                  className="rounded-[1.2rem] shadow-[0_40px_120px_rgba(0,0,0,0.6)]"
+                />
               </div>
             </div>
           </div>
@@ -233,56 +384,120 @@ export default function Home() {
 
         <section id="editions" className="border-t border-stone-900 bg-[linear-gradient(180deg,#09090b_0%,#111111_100%)]">
           <div className="mx-auto max-w-7xl px-6 py-20 lg:px-10">
-            <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr]">
-              <div>
-                <div className="text-xs uppercase tracking-[0.28em] text-amber-400">Editions</div>
-                <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
-                  One international page, multiple language editions.
-                </h2>
-                <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
-                  This model lets you keep the brand and marketing in English while offering the actual book
-                  in several languages. It keeps complexity under control without making the project feel small.
-                </p>
-                <div className="mt-8 flex flex-wrap gap-3">
-                  {editions.map((edition) => (
-                    <span
-                      key={edition}
-                      className="rounded-full border border-stone-700 px-4 py-2 text-sm text-stone-200"
-                    >
-                      {edition}
-                    </span>
-                  ))}
-                </div>
+            <div className="max-w-3xl">
+              <div className="text-xs uppercase tracking-[0.28em] text-amber-400">
+                Editions
               </div>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+                Choose your language, then go directly to the correct edition.
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
+                The site remains international and English-based, while the book itself
+                is available in multiple language editions. Select a language below to
+                jump to the matching purchase section.
+              </p>
+            </div>
 
-              <div className="rounded-[2rem] border border-stone-800 bg-black/50 p-8">
-                <div className="text-sm uppercase tracking-[0.24em] text-stone-500">Buy direct</div>
-                <div className="mt-3 text-2xl font-semibold">Choose format and language</div>
-                <div className="mt-8 space-y-4">
-                  {[
-                    { title: "Paperback", price: "€24", note: "Manual fulfilment" },
-                    { title: "Hardcover", price: "€32", note: "Manual fulfilment" },
-                    { title: "Digital PDF", price: "€14", note: "Instant delivery" },
-                  ].map((item) => (
-                    <div
-                      key={item.title}
-                      className="flex items-center justify-between rounded-2xl border border-stone-800 bg-stone-950/70 px-5 py-4"
-                    >
-                      <div>
-                        <div className="font-medium">{item.title}</div>
-                        <div className="text-sm text-stone-500">{item.note}</div>
-                      </div>
-                      <div className="text-lg font-semibold">{item.price}</div>
-                    </div>
-                  ))}
-                </div>
-                <button className="mt-8 w-full rounded-full bg-amber-500 px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-stone-950 hover:bg-amber-400">
-                  Proceed to Checkout
-                </button>
-                <p className="mt-4 text-sm leading-6 text-stone-500">
-                  Placeholder checkout module. In production this would connect to Stripe.
-                </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              {editions.map((edition) => (
+                <a
+                  key={edition.id}
+                  href={`#buy-${edition.id}`}
+                  className="rounded-full border border-stone-700 px-4 py-2 text-sm text-stone-200 transition hover:border-stone-500 hover:bg-stone-900"
+                >
+                  {edition.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="buy-direct" className="border-t border-stone-900 bg-black">
+          <div className="mx-auto max-w-7xl px-6 py-24 lg:px-10">
+            <div className="max-w-3xl">
+              <div className="text-xs uppercase tracking-[0.28em] text-amber-400">
+                Buy Direct
               </div>
+              <h2 className="mt-4 text-3xl font-semibold tracking-tight md:text-4xl">
+                Language-specific editions
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-stone-300">
+                Choose the edition that matches your preferred language. Each edition
+                below contains the correct purchase links for that language.
+              </p>
+            </div>
+
+            <div className="mt-16 space-y-12">
+              {editions.map((edition) => (
+                <section
+                  key={edition.id}
+                  id={`buy-${edition.id}`}
+                  className="scroll-mt-24 rounded-[2rem] border border-stone-800 bg-[linear-gradient(180deg,rgba(24,24,27,0.94)_0%,rgba(10,10,10,0.98)_100%)] shadow-[0_20px_80px_rgba(0,0,0,0.35)]"
+                >
+                  <div className="grid gap-0 lg:grid-cols-[0.9fr_1.1fr]">
+                    <div className="border-b border-stone-800 px-8 py-8 lg:border-b-0 lg:border-r lg:px-10 lg:py-10">
+                      <div className="text-xs uppercase tracking-[0.28em] text-stone-500">
+                        {edition.label}
+                      </div>
+
+                      <h3 className="mt-3 text-2xl font-semibold tracking-tight md:text-3xl">
+                        {edition.heading}
+                      </h3>
+
+                      <div className="mt-4 inline-flex rounded-full border border-stone-700 px-3 py-1 text-xs uppercase tracking-[0.18em] text-stone-400">
+                        Direct purchase from Gotan Press
+                      </div>
+
+                      <p className="mt-6 max-w-md text-base leading-7 text-stone-300">
+                        {edition.note}
+                      </p>
+
+                      <a
+                        href="#editions"
+                        className="mt-8 inline-block text-xs uppercase tracking-[0.2em] text-stone-500 transition hover:text-stone-300"
+                      >
+                        Back to languages
+                      </a>
+                    </div>
+
+                    <div className="px-8 py-8 lg:px-10 lg:py-10">
+                      <div className="space-y-4">
+                        {edition.products.map((product) => (
+                          <div
+                            key={`${edition.id}-${product.title}`}
+                            className="rounded-[1.5rem] border border-stone-800 bg-white/[0.02] px-5 py-5 transition hover:border-stone-700 hover:bg-white/[0.035] md:px-6"
+                          >
+                            <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                              <div>
+                                <div className="text-lg font-medium tracking-tight text-stone-100">
+                                  {product.title}
+                                </div>
+                                <div className="mt-1 text-sm leading-6 text-stone-500">
+                                  {product.note}
+                                </div>
+                              </div>
+
+                              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+                                <div className="text-xl font-semibold tracking-tight text-stone-100">
+                                  {product.price}
+                                </div>
+                                <a
+                                  href={product.url}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  className="inline-flex items-center justify-center rounded-full bg-amber-500 px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.16em] text-stone-950 transition hover:bg-amber-400"
+                                >
+                                  Order Copy
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              ))}
             </div>
           </div>
         </section>
